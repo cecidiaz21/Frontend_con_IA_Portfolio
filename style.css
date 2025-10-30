@@ -1,0 +1,104 @@
+     body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    p {
+      font-size: small;
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+    h1 {
+      margin-top: 2px;
+      margin-bottom: 0px;
+      font-weight: bolder;
+        }
+    h2 {
+      font-size: larger;
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+    h3 {
+      font-size: large;
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+    h4 {
+      font-size: medium;
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+    ul{
+      font-size: smaller;
+    }
+    .cv-container {
+      background: #fff;
+      border: 1px solid #dee2e6;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      margin-top: 40px;
+      margin-bottom: 40px;
+      padding: 0;
+    }
+    .cv-left {
+      border-right: 1px solid #dee2e6;
+      background: #142850;
+      min-height: 100%;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #fff;
+    }
+    .row{ /*heredado de div.row.cv-container*/
+    --bs-gutter-x: -4.5rem;
+    --bs-gutter-y: 0;
+    }
+    .cv-photo {
+      width: 80%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #dee2e6;
+      margin-bottom: 24px;
+      margin-left: 30px;
+      background: #e9ecef;
+      vertical-align: middle;
+      align-self: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .cv-contact-card {
+      background: #142850;
+      padding: 8px;
+      margin-top: 32px;
+    }
+    .cv-contact-icon {
+      font-size: 1.3rem;
+      color: #ffffff;
+      border-radius: 2px;
+      margin-right: 8px;
+    }
+    .cv-right {
+      padding: 32px 32px 32px 32px;
+    }
+    @media (max-width: 991.98px) {
+      .cv-left, .cv-right {
+        padding: 24px 12px;
+      }
+      .cv-container {
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
+    }
+    @media (max-width: 767.98px) {
+      .cv-left {
+        border-right: none;
+        border-bottom: 1px solid #dee2e6;
+      }
+      .cv-right {
+        padding: 24px 12px;
+      }
+      
+    }
+  

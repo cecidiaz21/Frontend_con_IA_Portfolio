@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Cecilia Diaz - Diseño Web </title>
+    <link rel="icon" type="image/jpeg" href="img/1.JPG">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+      /* Gradiente violeta-lila para el carrusel */
+      .carousel-gradient {
+        background: linear-gradient(135deg, #7b2ff2 0%, #19afeb 50%, #abf7f2 100%);
+        color: #fff;
+      }
+      .carousel-gradient h3 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 0 2px 8px rgba(25,175,235,0.10);
+        color: #fff;
+        margin-bottom: 1.2rem;
+      }
+      .carousel-gradient .btn {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        border-radius: 2rem;
+        padding: 0.75rem 2rem;
+        box-shadow: 0 2px 8px rgba(25,175,235,0.10);
+        text-transform: uppercase;
+      }
+      .carousel-gradient .btn-primary {
+        background-color: rgba(123,47,242,0.9);
+        border-color: #7b2ff2;
+      }
+      .carousel-gradient .btn-primary:hover {
+        background-color: #19afeb;
+        border-color: #19afeb;
+      }
+      body {
+        background-color: #fff;
+      }
+      .container, .card, .navbar, .bg-light {
+        background-color: #fff !important;
+      }
+      .container.mt-5 h3 {
+        font-size: 2.2rem;
+        text-align: center;
+        font-family: 'Merriweather', serif;
+        font-weight: 700;
+        color: #3a3a3a;
+        letter-spacing: 1px;
+        margin-bottom: 1.2rem;
+      }
+      .container.mt-5 h4 {
+        font-size: 1.5rem;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        color: #5a5a5a;
+        letter-spacing: 0.5px;
+        margin-bottom: 1.5rem;
+        margin-top: 0.5rem;
+      }
+      /* Google Fonts para un look formal y creativo */
+      @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Montserrat:wght@400;600&display=swap');
+
+      /* Sugerencia de estilo para el header principal */
+      .hero-title {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.5rem;
+        text-shadow: 0 2px 8px rgba(123,47,242,0.08);
+      }
+      .hero-title::after {
+        content: '';
+        display: block;
+        margin: 0.5rem auto 0 auto;
+        width: 60%;
+        height: 5px;
+        border-radius: 3px;
+        background: linear-gradient(90deg, #7b2ff2 0%, #19afeb 100%);
+      }
+      .card.border-0.shadow-sm {
+        border: 8px solid;
+        border-image: linear-gradient(90deg, #7b2ff2 0%, #19afeb 40%, #f357a8 100%) 1;
+        box-shadow: 0 12px 48px 0 rgba(123,47,242,0.25), 0 4px 24px 0 rgba(25,175,235,0.18);
+        border-radius: 2.5rem;
+        background: #fff;
+        transition: box-shadow 0.3s, border-image 0.5s, filter 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+      .card.border-0.shadow-sm::before {
+        content: '';
+        position: absolute;
+        top: -8px; left: -8px; right: -8px; bottom: -8px;
+        border-radius: 2.5rem;
+        pointer-events: none;
+        background: linear-gradient(120deg, #f357a8 0%, #7b2ff2 50%, #19afeb 100%);
+        opacity: 0;
+        transition: opacity 0.4s;
+        z-index: 1;
+      }
+      .card.border-0.shadow-sm:hover {
+        box-shadow: 0 24px 80px 0 rgba(123,47,242,0.35), 0 8px 32px 0 rgba(25,175,235,0.22);
+        filter: brightness(1.04);
+      }
+      .card.border-0.shadow-sm:hover::before {
+        opacity: 0.18;
+      }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 shadow-sm border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-bold w-100 d-flex flex-column align-items-center justify-content-center" href="#" style="text-align: center;">
+        <img src="img/5.png" alt="Logo" style="height: 6rem; width: auto; object-fit: contain; margin-bottom: 0.5rem;">
+        <span style="display: block; font-size: 2.5rem; font-family: 'Montserrat', sans-serif; color: #3a3a3a; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; text-align: center;">DISEÑO DE PÁGINAS WEB</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <!-- Enlace eliminado por solicitud -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Carrusel Bootstrap con gradiente violeta-lila -->
+  <div id="mainCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <!-- Primer slide: botón para bajar a servicios -->
+      <div class="carousel-item active text-center carousel-gradient" style="height: 300px;">
+        <div class="d-flex h-100 align-items-center justify-content-center flex-column">
+          <h3>Conocé nuestros servicios</h3>
+          <button class="btn btn-primary mt-3" onclick="document.getElementById('servicios').scrollIntoView({behavior: 'smooth'});">
+            Ver servicios
+          </button>
+        </div>
+      </div>
+      <!-- Segundo slide: enlace a contacto -->
+      <div class="carousel-item text-center carousel-gradient" style="height: 300px;">
+        <div class="d-flex h-100 align-items-center justify-content-center flex-column">
+          <h3>¿Querés contactarnos?</h3>
+          <a href="contacto.html" class="btn btn-primary mt-3">Ir a Contacto</a>
+        </div>
+      </div>
+      <!-- Tercer slide: enlace a about.html -->
+      <div class="carousel-item text-center carousel-gradient" style="height: 300px;">
+        <div class="d-flex h-100 align-items-center justify-content-center flex-column">
+          <h3>Conocé más sobre nosotros</h3>
+          <a href="about.html" class="btn btn-primary mt-3">Sobre mí</a>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <section class="hero-section text-center py-5 mb-4">
+      <h1 class="display-4 fw-bold hero-title" style="font-family: 'Merriweather', serif; color: #3a3a3a;">
+        Impulsá tu presencia digital
+      </h1>
+      <p class="lead" style="font-family: 'Montserrat', sans-serif; color: #5a5a5a; max-width: 600px; margin: 1.5rem auto;">
+        Creamos sitios web modernos, profesionales y a medida para potenciar tu emprendimiento, mostrar tus productos o servicios y conectar con más clientes.
+      </p>
+    </section>
+
+     <!-- Sección de servicios -->
+    <section id="servicios" class="mt-5">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <h3 class="card-title mb-3">Nuestros Servicios</h3>
+          <p class="card-text">
+            Ofrecemos diseño y desarrollo de páginas web profesionales, adaptadas a tus necesidades y con las mejores prácticas de usabilidad y accesibilidad. 
+            También brindamos asesoramiento personalizado, mantenimiento y soporte técnico para que tu presencia online sea exitosa.
+          </p>
+          <ul>
+            <li>Diseño web responsive</li>
+            <li>Desarrollo Frontend y Backend</li>
+            <li>Optimización SEO</li>
+            <li>Soporte y mantenimiento</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center mt-5">
+      <p>Derechos reservados</p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
