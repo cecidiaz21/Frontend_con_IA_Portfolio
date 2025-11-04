@@ -61,7 +61,7 @@ const persona = {
     }, '');
     
 
-    let productos = [
+    /*let productos = [
         {nombre: "Manzana", precio:1.2, cantidad:10},
         {nombre: "Platano", precio: 0.8, cantidad:15},
         {nombre: "Cereal", precio: 3.5, cantidad:2},
@@ -71,5 +71,19 @@ const persona = {
     function agregarProducto(nombre, precio, cantidad) { //hay que colocar los parametros en el mismo orden que fueron definidos, en cada uno va a recibir datos de acuerdo a si es string o numero
         productos.push({nombre:"Kiwi", precio: 5000, cantidad: 4});
         console.log("Producto agregado: " + nombre);
-    }
+    }*/
+
+        Ejercicios:
+Crea un arreglo con 5 números y muestra el tercero en consola.
+Agrega un nuevo elemento a un arreglo usando push.
+Elimina el último elemento de un arreglo y muéstralo en consola.
+Usa map para multiplicar por 2 cada número de un arreglo.
+Filtra un arreglo para obtener solo los números mayores a 10.
+Declara un objeto con las propiedades nombre, edad, y profesión.
+Accede y muestra el valor de una propiedad de un objeto.
+Agrega un método a un objeto que devuelva un saludo personalizado.
+Usa reduce para sumar todos los números de un arreglo.
+Combina arreglos y objetos: Crea un arreglo de objetos y recórrelo para mostrar el nombre de cada elemento.
+
+
 
