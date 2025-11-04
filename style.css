@@ -13,7 +13,7 @@
       font-weight: bolder;
         }
     h2 {
-      font-size: larger;
+      font-size: large;
       margin-top: 2px;
       margin-bottom: 2px;
     }
@@ -71,7 +71,7 @@
     .cv-contact-card {
       background: #142850;
       padding: 8px;
-      margin-top: 32px;
+      margin-top: 12px;
     }
     .cv-contact-icon {
       font-size: 1.3rem;
@@ -100,5 +100,9 @@
         padding: 24px 12px;
       }
       
+    }
+    .py{
+      padding-top: 3rem !important;
+      padd-bottom: 0rem !important;
     }
   
