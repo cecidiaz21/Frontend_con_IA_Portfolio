@@ -4,179 +4,198 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Cecilia Diaz - Diseño Web </title>
-    <link rel="icon" type="image/jpeg" href="img/1.JPG">
+    <link rel="icon" type="image/jpeg" href="img/foto/1.JPG">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
-      /* Gradiente violeta-lila para el carrusel */
-      .carousel-gradient {
-        background: linear-gradient(135deg, #7b2ff2 0%, #19afeb 50%, #abf7f2 100%);
-        color: #fff;
-      }
-      .carousel-gradient h3 {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 2rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        text-shadow: 0 2px 8px rgba(25,175,235,0.10);
-        color: #fff;
-        margin-bottom: 1.2rem;
-      }
-      .carousel-gradient .btn {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 1.1rem;
-        font-weight: 600;
-        letter-spacing: 1px;
-        border-radius: 2rem;
-        padding: 0.75rem 2rem;
-        box-shadow: 0 2px 8px rgba(25,175,235,0.10);
-        text-transform: uppercase;
-      }
-      .carousel-gradient .btn-primary {
-        background-color: rgba(123,47,242,0.9);
-        border-color: #7b2ff2;
-      }
-      .carousel-gradient .btn-primary:hover {
-        background-color: #19afeb;
-        border-color: #19afeb;
-      }
-      body {
-        background-color: #fff;
-      }
-      .container, .card, .navbar, .bg-light {
-        background-color: #fff !important;
-      }
-      .container.mt-5 h3 {
-        font-size: 2.2rem;
-        text-align: center;
-        font-family: 'Merriweather', serif;
-        font-weight: 700;
-        color: #3a3a3a;
-        letter-spacing: 1px;
-        margin-bottom: 1.2rem;
-      }
-      .container.mt-5 h4 {
-        font-size: 1.5rem;
-        text-align: center;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 400;
-        color: #5a5a5a;
-        letter-spacing: 0.5px;
-        margin-bottom: 1.5rem;
-        margin-top: 0.5rem;
-      }
-      /* Google Fonts para un look formal y creativo */
+      /* Fuentes */
       @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Montserrat:wght@400;600&display=swap');
 
-      /* Sugerencia de estilo para el header principal */
+      /* Basicos */
+      body { background: #fff; font-family: 'Montserrat', sans-serif; color: #333; }
       .hero-title {
-        position: relative;
-        display: inline-block;
-        padding-bottom: 0.5rem;
-        text-shadow: 0 2px 8px rgba(123,47,242,0.08);
+        font-family: 'Merriweather', serif;
+        color: #3a3a3a;
+        font-weight: 700;
+        letter-spacing: 0.2px;
       }
-      .hero-title::after {
-        content: '';
-        display: block;
-        margin: 0.5rem auto 0 auto;
-        width: 60%;
-        height: 5px;
-        border-radius: 3px;
-        background: linear-gradient(90deg, #7b2ff2 0%, #19afeb 100%);
-      }
+
+      /* Card estilizada (mantener efecto) */
       .card.border-0.shadow-sm {
-        border: 8px solid;
-        border-image: linear-gradient(90deg, #7b2ff2 0%, #19afeb 40%, #f357a8 100%) 1;
-        box-shadow: 0 12px 48px 0 rgba(123,47,242,0.25), 0 4px 24px 0 rgba(25,175,235,0.18);
-        border-radius: 2.5rem;
+        border-radius: 1rem;
         background: #fff;
-        transition: box-shadow 0.3s, border-image 0.5s, filter 0.3s;
-        position: relative;
+        box-shadow: 0 12px 48px rgba(0,0,0,0.06);
+      }
+
+      /* ---------- CARRUSEL: imágenes iguales y captions centrados ---------- */
+      /* Aplicamos layout sólo al item activo/animando para no romper Bootstrap */
+      #carouselExampleDark .carousel-item.active,
+      #carouselExampleDark .carousel-item-next,
+      #carouselExampleDark .carousel-item-prev {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        min-height: 380px;
+        padding: 1rem 0;
+      }
+
+      /* Imagen del carrusel: misma caja para jpg/png, mantiene proporción */
+      #carouselExampleDark .carousel-img {
+        width: 100%;
+        max-width: 920px;     /* ancho máximo visible */
+        max-height: 360px;    /* altura máxima para un tamaño uniforme */
+        object-fit: contain;  /* conserva proporción y centra dentro del recuadro */
+        display: block;
+        margin: 0 auto;
+      }
+
+      /* Caption: dejarlo bajo la imagen, centrado. fondo transparente y texto en negro */
+      #carouselExampleDark .carousel-caption {
+        position: static !important;
+        transform: none !important;
+        margin-top: .8rem;
+        text-align: center;
+        background: transparent !important; /* quitar fondo gris */
+        padding: .4rem .6rem;
+        border-radius: 6px;
+        color: #000 !important; /* texto negro */
+      }
+      #carouselExampleDark .carousel-caption h5,
+      #carouselExampleDark .carousel-caption p {
+        color: #000 !important;
+      }
+
+      /* Botones del caption -> gris */
+      #carouselExampleDark .carousel-caption .btn {
+        background-color: #6c757d !important; /* gris */
+        border-color: #6c757d !important;
+        color: #fff !important;
+      }
+
+      /* Controles prev/next: icono gris circular */
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-image: none !important;
+        background-color: #6c757d;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: inline-block;
+        box-shadow: none;
+      }
+
+      @media (max-width: 768px) {
+        #carouselExampleDark .carousel-item.active,
+        #carouselExampleDark .carousel-item-next,
+        #carouselExampleDark .carousel-item-prev { min-height: 240px; }
+        #carouselExampleDark .carousel-img { max-height: 200px; max-width: 100%; }
+      }
+
+      /* ---------- SERVICIOS: tarjetas con imagenes iguales y orden derecha->izquierda ---------- */
+      .services-row {
+        display: flex;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      @media (min-width: 768px) {
+        .services-row { flex-direction: row-reverse; }
+      }
+      @media (max-width: 767px) {
+        .services-row { flex-direction: column; }
+      }
+
+      .service-card {
+        flex: 0 1 300px;
+        max-width: 320px;
+        border-radius: 1rem;
         overflow: hidden;
       }
-      .card.border-0.shadow-sm::before {
-        content: '';
-        position: absolute;
-        top: -8px; left: -8px; right: -8px; bottom: -8px;
-        border-radius: 2.5rem;
-        pointer-events: none;
-        background: linear-gradient(120deg, #f357a8 0%, #7b2ff2 50%, #19afeb 100%);
-        opacity: 0;
-        transition: opacity 0.4s;
-        z-index: 1;
+
+      .service-card .service-img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        display: block;
       }
-      .card.border-0.shadow-sm:hover {
-        box-shadow: 0 24px 80px 0 rgba(123,47,242,0.35), 0 8px 32px 0 rgba(25,175,235,0.22);
-        filter: brightness(1.04);
+
+      .service-card .card-body {
+        padding: 1rem;
       }
-      .card.border-0.shadow-sm:hover::before {
-        opacity: 0.18;
-      }
+
+      .services-row .card + .card { margin-top: 0; }
     </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 shadow-sm border-bottom">
-    <div class="container">
-      <a class="navbar-brand fw-bold w-100 d-flex flex-column align-items-center justify-content-center" href="#" style="text-align: center;">
-        <img src="img/5.png" alt="Logo" style="height: 6rem; width: auto; object-fit: contain; margin-bottom: 0.5rem;">
-        <span style="display: block; font-size: 2.5rem; font-family: 'Montserrat', sans-serif; color: #3a3a3a; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; text-align: center;">DISEÑO DE PÁGINAS WEB</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <!-- Enlace eliminado por solicitud -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <img src="img/5.png" alt="logo" width="120" height="110">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">          
+          <a class="nav-link" href="index.html" aria-current="page" href="#">Nuestros servicios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html" aria-current="page" href="#">Sobre mi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contacto.html" aria-current="page" href="#">Contacto</a>
+        </li>
         </ul>
       </div>
-    </div>
-  </nav>
+      </div>
+    </nav>
 
-  <!-- Carrusel Bootstrap con gradiente violeta-lila -->
-  <div id="mainCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <!-- Primer slide: botón para bajar a servicios -->
-      <div class="carousel-item active text-center carousel-gradient" style="height: 300px;">
-        <div class="d-flex h-100 align-items-center justify-content-center flex-column">
-          <h3>Conocé nuestros servicios</h3>
-          <button class="btn btn-primary mt-3" onclick="document.getElementById('servicios').scrollIntoView({behavior: 'smooth'});">
-            Ver servicios
-          </button>
-        </div>
-      </div>
-      <!-- Segundo slide: enlace a contacto -->
-      <div class="carousel-item text-center carousel-gradient" style="height: 300px;">
-        <div class="d-flex h-100 align-items-center justify-content-center flex-column">
-          <h3>¿Querés contactarnos?</h3>
-          <a href="contacto.html" class="btn btn-primary mt-3">Ir a Contacto</a>
-        </div>
-      </div>
-      <!-- Tercer slide: enlace a about.html -->
-      <div class="carousel-item text-center carousel-gradient" style="height: 300px;">
-        <div class="d-flex h-100 align-items-center justify-content-center flex-column">
-          <h3>Conocé más sobre nosotros</h3>
-          <a href="about.html" class="btn btn-primary mt-3">Sobre mí</a>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-      <span class="visually-hidden">Anterior</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-      <span class="visually-hidden">Siguiente</span>
-    </button>
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
+  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="1000">
+      <img src="img/2.jpg" class="carousel-img" alt="servicios">
+      <div class="carousel-caption">
+         <h5>Conocé nuestros servicios</h5>
+         <button class="btn btn-primary mt-3" onclick="document.getElementById('servicios').scrollIntoView({behavior: 'smooth'});">
+             Ver servicios
+           </button>
+       </div>
+     </div>
+     <div class="carousel-item" data-bs-interval="2000">
+      <img src="img/66.png" class="carousel-img" alt="quienes somos">
+      <div class="carousel-caption">
+         <h5>Conocé más sobre nosotros</h5>
+         <p>Detalle de experiencia, estudios y más.</p>
+        <a class="btn btn-primary mt-3" href="about.html">Sobre mi</a>
+       </div>
+     </div>
+     <div class="carousel-item" data-bs-interval="2000">
+      <img src="img/3.jpg" class="carousel-img" alt="contacto">
+      <div class="carousel-caption">
+         <h5>Contactanos</h5>
+         <p>Contanos de tu proyecto y recib un presupuesto personalizado.</p>
+        <a class="btn btn-primary mt-3" href="contacto.html">Contacto</a>
+       </div>
+     </div>
+   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
 
   <div class="container mt-5">
     <section class="hero-section text-center py-5 mb-4">
-      <h1 class="display-4 fw-bold hero-title" style="font-family: 'Merriweather', serif; color: #3a3a3a;">
+      <h1 class="display-4 fw-bold hero-title">
         Impulsá tu presencia digital
       </h1>
       <p class="lead" style="font-family: 'Montserrat', sans-serif; color: #5a5a5a; max-width: 600px; margin: 1.5rem auto;">
@@ -184,21 +203,51 @@
       </p>
     </section>
 
-     <!-- Sección de servicios -->
+     <!-- Sección de servicios (reemplazada por una versión limpia y ordenada) -->
     <section id="servicios" class="mt-5">
       <div class="card border-0 shadow-sm">
         <div class="card-body">
           <h3 class="card-title mb-3">Nuestros Servicios</h3>
           <p class="card-text">
-            Ofrecemos diseño y desarrollo de páginas web profesionales, adaptadas a tus necesidades y con las mejores prácticas de usabilidad y accesibilidad. 
-            También brindamos asesoramiento personalizado, mantenimiento y soporte técnico para que tu presencia online sea exitosa.
+            Ofrecemos diseño y desarrollo de páginas web profesionales, asesoramiento, mantenimiento y soporte técnico.
           </p>
-          <ul>
-            <li>Diseño web responsive</li>
-            <li>Desarrollo Frontend y Backend</li>
-            <li>Optimización SEO</li>
-            <li>Soporte y mantenimiento</li>
-          </ul>
+
+          <div class="services-row mt-4">
+            <div class="card service-card border-0 shadow-sm">
+              <img src="img/7.png" alt="Diseño responsive" class="service-img">
+              <div class="card-body">
+                <h5 class="card-title">Diseño web responsive</h5>
+                <p class="card-text small">Sitios que se adaptan automáticamente a cualquier dispositivo.</p>
+              </div>
+            </div>
+
+            <div class="card service-card border-0 shadow-sm">
+              <img src="img/8.png" alt="Frontend y Backend" class="service-img">
+              <div class="card-body">
+                <h5 class="card-title">Desarrollo Frontend y Backend</h5>
+                <p class="card-text small">Interfaz y lógica del servidor para proyectos completos y seguros.</p>
+              </div>
+            </div>
+
+            <div class="card service-card border-0 shadow-sm">
+              <img src="img/9.jpg" alt="SEO" class="service-img">
+              <div class="card-body">
+                <h5 class="card-title">Optimización SEO</h5>
+                <p class="card-text small">Mejoramos la visibilidad de tu sitio en buscadores.</p>
+              </div>
+            </div>
+
+            <div class="card service-card border-0 shadow-sm">
+              <img src="img/10.jpg" alt="Mantenimiento" class="service-img">
+              <div class="card-body">
+                <h5 class="card-title">Soporte y mantenimiento</h5>
+                <p class="card-text small">Actualizaciones, seguridad y soporte continuo.</p>
+              </div>              
+            </div>
+            
+                <p>Costo base desde 100 usd mensuales. </p>
+          </div>
+
         </div>
       </div>
     </section>
