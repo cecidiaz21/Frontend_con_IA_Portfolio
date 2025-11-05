@@ -73,17 +73,75 @@ const persona = {
         console.log("Producto agregado: " + nombre);
     }*/
 
-        Ejercicios:
-Crea un arreglo con 5 números y muestra el tercero en consola.
-Agrega un nuevo elemento a un arreglo usando push.
-Elimina el último elemento de un arreglo y muéstralo en consola.
-Usa map para multiplicar por 2 cada número de un arreglo.
-Filtra un arreglo para obtener solo los números mayores a 10.
-Declara un objeto con las propiedades nombre, edad, y profesión.
-Accede y muestra el valor de una propiedad de un objeto.
-Agrega un método a un objeto que devuelva un saludo personalizado.
-Usa reduce para sumar todos los números de un arreglo.
-Combina arreglos y objetos: Crea un arreglo de objetos y recórrelo para mostrar el nombre de cada elemento.
+//Ejercicios:
+//1-Crea un arreglo con 5 números y muestra el tercero en consola.
+let numeros = [4, 8, 15, 16, 23];
+console.log('El arreglo de 5 números es: ', numeros);
+console.log('Tercer número del arreglo: ', numeros[2]);
 
+//2-Agrega un nuevo elemento a un arreglo usando push.
+numeros.push(22);
+console.log('Numeros con un nuevo elemento: ', numeros);
+
+//3-Elimina el último elemento de un arreglo y muéstralo en consola.
+numeros.pop();
+console.log('Numeros sin el último elemento: ', numeros);
+
+//4-Usa map para multiplicar por 2 cada número de un arreglo.
+//Declaro un nuevo let para hacer un nuevo array con el mapeo
+let nuevosNumeros = numeros.map((elemento) => elemento * 2);
+console.log("Nuevo array de números con cada uno de sus elementos duplicados: ", nuevosNumeros);
+
+//5-Filtra un arreglo para obtener solo los números mayores a 10.
+   numeros.filter(elemento => elemento > 10).forEach(elemento => {
+    console.log('Elemento mayor a 10: ', elemento);
+});
+
+//6-Declara un objeto con las propiedades nombre, edad, y profesión.
+let persona = {
+    nombre : "Juan",
+    edad: 25,
+    profesion: "estudiante"
+    };
+console.log(persona)
+
+//7-Accede y muestra el valor de una propiedad de un objeto.
+console.log(persona.nombre);
+console.log(persona.edad);
+console.log(persona.profesion);
+
+//8-Agrega un método a un objeto que devuelva un saludo personalizado.
+console.log("Buenos dias Sr. "+ (persona.nombre));
+
+/*persona.push(saludar: function () {
+        return "Hola, " + this.nombre;
+    });
+    console.log(persona.saludar());  no puedo usar pushi xq persona no esta declarada como array tengo q usar*/
+
+persona.saludar = function () {
+    return "Hola, " + this.nombre;
+};
+console.log(persona.saludar());  // se debe usar una asignacion directa
+
+
+//9-Usa reduce para sumar todos los números de un arreglo.
+let suma = numeros.reduce((acumulador, elemento) => acumulador + elemento, 0);
+    console.log('Suma total de los números:', suma);
+
+//10-Combina arreglos y objetos: Crea un arreglo de objetos y recórrelo para mostrar el nombre de cada elemento.
+
+let personas = [
+    { nombre: "Juan", edad: 25 },
+    { nombre: "Ana", edad: 30 },
+    { nombre: "Carlos", edad: 35 }
+]; //creamos un array con obejtos, cada uno tiene nombre y edad como propiedades
+
+personas.forEach(persona => {
+    console.log('Nombre en array personas:', persona.nombre);
+}); //forEach va a iterar a traves de cada objetvo y saca la propiedad nombre
+
+personas.forEach(persona => {
+    console.log('Edad:', persona.edad);
+}); //forEach va a iterar a traves de cada objetvo y saca la propiedad edad (atributo?)
 
 
