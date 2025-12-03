@@ -14,7 +14,7 @@ Este proyecto es un portfolio personal frontend potenciado con funcionalidades d
 1- Página de inicio con presentación breve, incluye un carrousel con vinculos a las secciones.
   + Diseñar una nav bar que contenga logo y facil acceso a las secciones
   + Añadir imagenes para cada seccion
-  + ![Imagen de la sección] (https://raw.githubusercontent.com/cecidiaz21/Frontend_con_IA_Portfolio/refs/heads/main/img/Seccion%201.JPG)
+  ![Imagen de la sección](https://raw.githubusercontent.com/cecidiaz21/Frontend_con_IA_Portfolio/refs/heads/main/img/Seccion%201.JPG)
 
 2- Galería/Sección de proyectos con detalles y enlaces.
 + Diseño de tarjetas que permita un lay out mas interesante
