@@ -7,10 +7,7 @@
     <link rel="icon" type="image/jpeg" href="img/foto/1.JPG">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
-      /* Fuentes */
       @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Montserrat:wght@400;600&display=swap');
-
-      /* Basicos */
       body { background: #fff; font-family: 'Monserrat', sans-serif; color: #333; }
       .hero-title {
         font-family: 'Merriweather', serif;
@@ -18,16 +15,11 @@
         font-weight: 700;
         letter-spacing: 0.2px;
       }
-
-      /* Card estilizada (mantener efecto) */
       .card.border-0.shadow-sm {
         border-radius: 1rem;
         background: #fff;
         box-shadow: 0 12px 48px rgba(0,0,0,0.06);
       }
-
-      /* ---------- CARRUSEL: imágenes iguales y captions centrados ---------- */
-      /* Aplicamos layout sólo al item activo/animando para no romper Bootstrap */
       #carouselExampleDark .carousel-item.active,
       #carouselExampleDark .carousel-item-next,
       #carouselExampleDark .carousel-item-prev {
@@ -35,13 +27,9 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        /* eliminé el min-height fijo para que el alto lo controle la imagen */
         padding: 1rem 0;
         position: relative;
       }
-
-      /* Imagen del carrusel: cubrir todo el ancho de la ventana (full-bleed)
-         mantenemos proporción con object-fit: cover y centramos visualmente */
       #carouselExampleDark .carousel-img {
         width: 100vw;           /* ancho igual al viewport */
         max-width: none;
@@ -50,8 +38,6 @@
         display: block;
         margin-left: calc((100% - 100vw)/2); /* centra cuando está en contenedores */
       }
-
-      /* Caption: dejarlo bajo la imagen, centrado. fondo transparente y texto en negro */
       #carouselExampleDark .carousel-caption {
         position: absolute; /* posicionamos sobre la imagen */
         bottom: 2.2rem;
@@ -69,13 +55,11 @@
         color: #000 !important;
         margin: 0;
       }
-
       #carouselExampleDark .carousel-caption .btn {
         background-color: #6c757d !important; /* gris */
         border-color: #6c757d !important;
         color: #fff !important;
       }
-
       .carousel-control-prev-icon,
       .carousel-control-next-icon {
         background-image: none !important;
@@ -86,7 +70,6 @@
         display: inline-block;
         box-shadow: none;
       }
-
       @media (max-width: 768px) {
         #carouselExampleDark .carousel-img {
           height: 40vh; /* menos alto en móviles */
@@ -96,8 +79,6 @@
           padding: .35rem .6rem;
         }
       }
-
-      /* ---------- SERVICIOS: tarjetas ---------- */
       .services-row {
         display: flex;
         gap: 1.25rem;
@@ -110,25 +91,21 @@
       @media (max-width: 767px) {
         .services-row { flex-direction: column; }
       }
-
       .service-card {
         flex: 0 1 300px;
         max-width: 320px;
         border-radius: 1rem;
         overflow: hidden;
       }
-
       .service-card .service-img {
         width: 100%;
         height: 180px;
         object-fit: cover;
         display: block;
       }
-
       .service-card .card-body {
         padding: 1rem;
       }
-
       .services-row .card + .card { margin-top: 0; }
     </style>
 </head>
@@ -262,3 +239,4 @@
 </body>
 
 </html>
+
