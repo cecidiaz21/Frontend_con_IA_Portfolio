@@ -19,48 +19,24 @@
     </style>
 </head>
 <body>
-   <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-     <div class="carousel-indicators" style="bottom: -10px;">
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-     <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="1000">
-             <img src="img/2.jpg" class="carousel-img" alt="servicios">
-             <div class="carousel-caption">
-             <h5>Conocé nuestros servicios</h5>
-             <button class="btn btn-primary mt-3" onclick="document.getElementById('servicios').scrollIntoView({behavior: 'smooth'});">
-                 Ver servicios
-               </button>
-             </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="2000">
-          <img src="img/66.png" class="carousel-img" alt="quienes somos">
-          <div class="carousel-caption">
-             <h5>Conocé más sobre nosotros</h5>
-             <p>Detalle de experiencia, estudios y más.</p>
-            <a class="btn btn-primary mt-3" href="about.html">Sobre mi</a>
-           </div>
-          </div>
-        <div class="carousel-item" data-bs-interval="2000">
-              <img src="img/3.jpg" class="carousel-img" alt="contacto">
-            <div class="carousel-caption">
-                 <h5>Contactanos</h5>
-                 <p>Contanos de tu proyecto y recibi un presupuesto personalizado.</p>
-                <a class="btn btn-primary mt-3" href="contacto.html">Contacto</a>
-              </div>
-          </div>
-   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+  <nav class="navbar navbar-expand navbar-light bg-light">
+  <div class="container-fluid">
+    <img src="img/5.png" alt="logo" width="120" height="110">
+    <div class="navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Nuestros servicios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">Sobre mi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contacto.html">Contacto</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
   <div class="container mt-5">
     <header class="mb-4">
       <h2 class="text-center">Contacto</h2>
@@ -95,5 +71,6 @@
 </body>
 
 </html>
+
 
 
