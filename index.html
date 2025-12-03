@@ -35,34 +35,39 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        min-height: 380px;
+        /* eliminé el min-height fijo para que el alto lo controle la imagen */
         padding: 1rem 0;
+        position: relative;
       }
 
-      /* Imagen del carrusel: misma caja para jpg/png, mantiene proporción */
+      /* Imagen del carrusel: cubrir todo el ancho de la ventana (full-bleed)
+         mantenemos proporción con object-fit: cover y centramos visualmente */
       #carouselExampleDark .carousel-img {
-        width: 100%;
-        max-width: 920px;     /* ancho máximo visible */
-        max-height: 360px;    /* altura máxima para un tamaño uniforme */
-        object-fit: contain;  /* conserva proporción y centra dentro del recuadro */
+        width: 100vw;           /* ancho igual al viewport */
+        max-width: none;
+        height: 60vh;           /* altura visible; ajustable */
+        object-fit: cover;      /* recorta pero mantiene proporción */
         display: block;
-        margin: 0 auto;
+        margin-left: calc((100% - 100vw)/2); /* centra cuando está en contenedores */
       }
 
       /* Caption: dejarlo bajo la imagen, centrado. fondo transparente y texto en negro */
       #carouselExampleDark .carousel-caption {
-        position: static !important;
-        transform: none !important;
-        margin-top: .8rem;
+        position: absolute; /* posicionamos sobre la imagen */
+        bottom: 2.2rem;
+        left: 50%;
+        transform: translateX(-50%);
         text-align: center;
-        background: transparent !important; 
-        padding: .4rem .6rem;
+        background: rgba(255,255,255,0.85);
+        padding: .4rem .8rem;
         border-radius: 6px;
-        color: #000 !important; 
+        color: #000 !important;
+        max-width: 90%;
       }
       #carouselExampleDark .carousel-caption h5,
       #carouselExampleDark .carousel-caption p {
         color: #000 !important;
+        margin: 0;
       }
 
       #carouselExampleDark .carousel-caption .btn {
@@ -83,10 +88,13 @@
       }
 
       @media (max-width: 768px) {
-        #carouselExampleDark .carousel-item.active,
-        #carouselExampleDark .carousel-item-next,
-        #carouselExampleDark .carousel-item-prev { min-height: 240px; }
-        #carouselExampleDark .carousel-img { max-height: 200px; max-width: 100%; }
+        #carouselExampleDark .carousel-img {
+          height: 40vh; /* menos alto en móviles */
+        }
+        #carouselExampleDark .carousel-caption {
+          bottom: 1rem;
+          padding: .35rem .6rem;
+        }
       }
 
       /* ---------- SERVICIOS: tarjetas ---------- */
@@ -233,16 +241,6 @@
               </div>
             </div>
 
-            <!-- <div class="card service-card border-0 shadow-sm">
-              <img src="img/9.jpg" alt="SEO" class="service-img">
-              <div class="card-body">
-                <h5 class="card-title">Optimización SEO</h5>
-                <p class="card-text small">Mejoramos la visibilidad de tu sitio en buscadores.</p>
-              </div>
-            </div> -->
-
-           
-            
                 <p>Costo base desde 100 usd mensuales. </p>
                 <hr>
           </div>
